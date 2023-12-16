@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Benchmark Climbing FAQ Bot</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <h1> Welcome to Machine Learning FAQ Bot! </h1>
+    <form action="/generate" method="post">
+        <label for="user_input">Ask a question:</label>
+        <input type="text" name="user_input" id="user_input" required>
+        <button type="submit">Submit</button>
+    </form>
+    <hr>
+    {% if user_input %}
+        <h2>Your Question:</h2>
+        <p>{{ user_input }}</p>
+        <h2>Answer:</h2>
+        <p>{{ response }}</p>
+    {% endif %}
+</body>
+</html>
